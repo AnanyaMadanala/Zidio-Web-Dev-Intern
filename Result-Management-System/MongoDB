@@ -1,0 +1,12 @@
+const mongoose = require('mongoose');
+
+const StudentSchema = new mongoose.Schema({
+  studentId: { type: String, required: true, unique: true },
+  attendance: { type: Number, default: 0 },
+  projectReview: { type: Number, default: 0 },
+  assessment: { type: Number, default: 0 },
+  projectSubmission: { type: Number, default: 0 },
+  linkedInPost: { type: Number, default: 0 },
+});
+
+module.exports = mongoose.model('Student', StudentSchema);
